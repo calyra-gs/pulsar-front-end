@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     iniciarFormularioAlerta();
     iniciarSimulador();
     iniciarMorador();
+    iniciarFiltroRetornos();
 });
 
 function iniciarMenu() {
@@ -247,4 +248,27 @@ function iniciarMorador() {
     }
 
     atualizarDetalhesResgate();
+}
+
+function iniciarFiltroRetornos() {
+    const filtro = document.getElementById("returnFilter");
+    const linhas = document.querySelectorAll("#returnsTable tbody tr");
+
+    if (!filtro || linhas.length === 0) {
+        return;
+    }
+
+    filtro.addEventListener("change", function () {
+        const valor = filtro.value;
+
+        linhas.forEach(function (linha) {
+            const prioridade = linha.getAttribute("data-priority");
+
+            if (valor === "todos" || valor === prioridade) {
+                linha.classList.remove("hidden-row");
+            } else {
+                linha.classList.add("hidden-row");
+            }
+        });
+    });
 }
