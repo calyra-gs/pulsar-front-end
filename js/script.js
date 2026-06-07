@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     iniciarMenu();
     iniciarFormularioAlerta();
+    iniciarSimulador();
 });
 
 function iniciarMenu() {
@@ -128,4 +129,67 @@ function formatarData(data) {
 
     const partes = data.split("-");
     return partes[2] + "/" + partes[1] + "/" + partes[0];
+}
+
+function iniciarSimulador() {
+    const botaoProxima = document.getElementById("btnProximaEtapa");
+    const botaoReiniciar = document.getElementById("btnReiniciarSimulacao");
+    const etapas = document.querySelectorAll(".sim-step");
+    const status = document.getElementById("routeStatus");
+    const timeline = document.getElementById("simTimeline");
+
+    if (!botaoProxima || !botaoReiniciar || etapas.length === 0 || !status || !timeline) {
+        return;
+    }
+
+    const textos = [
+        "Mensagem criada pela Defesa Civil.",
+        "Alerta armazenado no gateway comunitario.",
+        "Link principal indisponivel. Mensagem aguardando nova conexao.",
+        "Rota alternativa detectada para encaminhamento.",
+        "Morador recebeu o alerta oficial.",
+        "Morador enviou status ou pedido de socorro.",
+        "Retorno chegou ao painel da Defesa Civil."
+    ];
+
+    const horarios = ["10:00:00", "10:00:05", "10:01:15", "10:03:40", "10:04:25", "10:06:10", "10:06:30"];
+    let etapaAtual = 0;
+
+    botaoProxima.addEventListener("click", function () {
+        if (etapaAtual < etapas.length - 1) {
+            etapaAtual++;
+            atualizarSimulador();
+        }
+    });
+
+    botaoReiniciar.addEventListener("click", function () {
+        etapaAtual = 0;
+        atualizarSimulador();
+    });
+
+    function atualizarSimulador() {
+        etapas.forEach(function (etapa, indice) {
+            etapa.classList.remove("active");
+            etapa.classList.remove("done");
+
+            if (indice < etapaAtual) {
+                etapa.classList.add("done");
+            }
+
+            if (indice === etapaAtual) {
+                etapa.classList.add("active");
+            }
+        });
+
+        status.innerHTML = "<strong>Status atual:</strong> <span>" + textos[etapaAtual] + "</span>";
+        timeline.innerHTML = "";
+
+        for (let i = 0; i <= etapaAtual; i++) {
+            const item = document.createElement("li");
+            item.innerHTML = "<strong>" + horarios[i] + "</strong> " + textos[i];
+            timeline.appendChild(item);
+        }
+    }
+
+    atualizarSimulador();
 }
