@@ -24,10 +24,12 @@
                     <li><a href="sobre.html">Solucao</a></li>
                     <li><a href="simulador.html">Simulacao</a></li>
                     <li><a href="painel.html">Painel</a></li>
+                    <li><a href="emitir-alerta.html">Emitir alerta</a></li>
+                    <li><a class="active" href="retornos.html">Retornos</a></li>
                     <li><a href="morador.html">Morador</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="integrantes.html">Integrantes</a></li>
                     <li><a href="contato.html">Contato</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,14 +37,150 @@
 
     <main>
         <section class="dashboard-title">
-            <p class="tag">Retornos e consciencia situacional</p>
-            <h1>Retornos da populacao</h1>
-            <p>Esta tela mostrara respostas recebidas dos moradores e prioridades de atendimento.</p>
+            <header>
+                <p class="tag">Retornos e consciencia situacional</p>
+                <h1>Retornos da populacao</h1>
+                <p>Leitura consolidada para priorizacao de acoes e apoio a tomada de decisao.</p>
+            </header>
+
+            <a class="btn primary" href="morador.html">Registrar novo retorno</a>
+        </section>
+
+        <section class="metric-grid" aria-label="Indicadores de retorno">
+            <article class="metric-card">
+                <span>Pessoas acolhidas</span>
+                <strong>1.248</strong>
+                <p>+122 nas ultimas 24h</p>
+            </article>
+
+            <article class="metric-card success">
+                <span>Evacuados</span>
+                <strong>342</strong>
+                <p>+28 nas ultimas 24h</p>
+            </article>
+
+            <article class="metric-card warning">
+                <span>Pedidos de apoio</span>
+                <strong>87</strong>
+                <p>+15 nas ultimas 24h</p>
+            </article>
+
+            <article class="metric-card danger">
+                <span>Ocorrencias criticas</span>
+                <strong>23</strong>
+                <p>+5 nas ultimas 24h</p>
+            </article>
+
+            <article class="metric-card">
+                <span>Areas sem resposta</span>
+                <strong>6</strong>
+                <p>-1 nas ultimas 24h</p>
+            </article>
+        </section>
+
+        <aside class="notice">
+            <strong>Observacao:</strong> os dados abaixo sao simulados para demonstrar a tela de acompanhamento.
+        </aside>
+
+        <section class="returns-layout">
+            <article class="panel-card">
+                <header class="panel-title">
+                    <h2>Retornos recebidos</h2>
+                    <select class="simple-select" id="returnFilter">
+                        <option value="todos">Todos</option>
+                        <option value="critica">Critica</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Media</option>
+                    </select>
+                </header>
+
+                <div class="table-wrapper">
+                    <table id="returnsTable">
+                        <thead>
+                            <tr>
+                                <th>ID anonimo</th>
+                                <th>Area</th>
+                                <th>Tipo</th>
+                                <th>Pessoas</th>
+                                <th>Prioridade</th>
+                                <th>Situacao</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-priority="critica">
+                                <td>MOR-987</td>
+                                <td>Morada do Vale</td>
+                                <td>Pedido de socorro</td>
+                                <td>3</td>
+                                <td><span class="pill danger">Critica</span></td>
+                                <td>Pendente</td>
+                            </tr>
+
+                            <tr data-priority="baixa">
+                                <td>MOR-3241</td>
+                                <td>Parque das Aguas</td>
+                                <td>Estamos seguros</td>
+                                <td>4</td>
+                                <td><span class="pill info">Baixa</span></td>
+                                <td>Registrado</td>
+                            </tr>
+
+                            <tr data-priority="critica">
+                                <td>MOR-7122</td>
+                                <td>Novo Horizonte</td>
+                                <td>Pedido de socorro</td>
+                                <td>2</td>
+                                <td><span class="pill danger">Critica</span></td>
+                                <td>Pendente</td>
+                            </tr>
+
+                            <tr data-priority="media">
+                                <td>MOR-1152</td>
+                                <td>Ribeirao das Pedras</td>
+                                <td>Precisamos de abrigo</td>
+                                <td>5</td>
+                                <td><span class="pill warning">Media</span></td>
+                                <td>Em analise</td>
+                            </tr>
+
+                            <tr data-priority="baixa">
+                                <td>MOR-6621</td>
+                                <td>Jardim Esperanca</td>
+                                <td>Estamos seguros</td>
+                                <td>3</td>
+                                <td><span class="pill info">Baixa</span></td>
+                                <td>Registrado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <aside class="side-stack">
+                <article class="panel-card">
+                    <h2>Priorizacao operacional</h2>
+                    <ol class="priority-list">
+                        <li><strong>Setor 7</strong><span>Morada do Vale | Critico</span></li>
+                        <li><strong>Setor 4</strong><span>Ribeirao das Pedras | Alto</span></li>
+                        <li><strong>Setor 2</strong><span>Novo Horizonte | Medio</span></li>
+                    </ol>
+                </article>
+
+                <article class="panel-card">
+                    <h2>Cobertura e resposta</h2>
+                    <section class="coverage-box" aria-label="Cobertura de resposta">
+                        <strong>72%</strong>
+                        <span>area com resposta</span>
+                    </section>
+                    <a class="btn secondary full" href="painel.html">Voltar ao painel</a>
+                </article>
+            </aside>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>Pulsar | Projeto academico FIAP 2026</p>
+        <p>Pulsar | Global Solution FIAP 2026/1 | ADS 1 semestre</p>
+        <p>Retornos simulados | Sem dados reais</p>
     </footer>
 
     <script src="../js/script.js"></script>
