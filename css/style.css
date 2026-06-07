@@ -432,6 +432,63 @@ p {
     padding-left: 12px;
 }
 
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.content-card {
+    display: grid;
+    gap: 14px;
+    background: var(--fundo-superficie);
+    border: 1px solid var(--borda-suave);
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    padding: 26px;
+}
+
+.content-card.wide {
+    grid-column: 1 / -1;
+}
+
+.content-card p + p {
+    margin-top: 4px;
+}
+
+.simple-list {
+    display: grid;
+    gap: 12px;
+    color: var(--texto-secundario);
+    list-style: decimal;
+    list-style-position: outside;
+    padding-left: 22px;
+}
+
+.simple-list li::marker {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 56px;
+}
+
+.cards-grid .section-heading {
+    grid-column: 1 / -1;
+    margin-bottom: 6px;
+}
+
+.solution-icon {
+    background: var(--laranja-suave);
+    border-radius: 8px;
+    padding: 8px;
+}
+
 .site-footer {
     border-top: 1px solid var(--borda-suave);
     background: var(--fundo-superficie);
@@ -506,10 +563,16 @@ p {
     }
 
     .home-summary,
+    .content-card,
     .info-card,
     .journey-card,
     .problem-band {
         padding: 20px;
+    }
+
+    .content-grid,
+    .cards-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -518,6 +581,10 @@ p {
     .home-organized-grid,
     .problem-band {
         grid-template-columns: 1fr;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
