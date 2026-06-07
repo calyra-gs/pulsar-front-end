@@ -24,10 +24,12 @@
                     <li><a class="active" href="sobre.html">Solucao</a></li>
                     <li><a href="simulador.html">Simulacao</a></li>
                     <li><a href="painel.html">Painel</a></li>
+                    <li><a href="emitir-alerta.html">Emitir alerta</a></li>
+                    <li><a href="retornos.html">Retornos</a></li>
                     <li><a href="morador.html">Morador</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="integrantes.html">Integrantes</a></li>
                     <li><a href="contato.html">Contato</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,12 +39,87 @@
         <section class="page-hero">
             <p class="tag">Solucao</p>
             <h1>O Pulsar conecta alerta oficial e retorno da populacao.</h1>
-            <p>Esta pagina apresentara o contexto do problema, a proposta da solucao e os limites do prototipo.</p>
+            <p>
+                A proposta e demonstrar uma comunicacao emergencial resiliente, inspirada em DTN,
+                com foco no ultimo quilometro entre a Defesa Civil e a comunidade.
+            </p>
         </section>
+
+        <section class="content-grid">
+            <article class="content-card wide">
+                <h2>Contexto do problema</h2>
+                <p>
+                    Durante enchentes, deslizamentos e outros desastres, a infraestrutura de comunicacao
+                    pode ficar instavel. O alerta oficial pode nao chegar a todos e o retorno da populacao
+                    pode nao voltar para quem esta coordenando a resposta.
+                </p>
+                <p>
+                    O Pulsar foi pensado como uma simulacao academica desse caminho critico: enviar,
+                    armazenar, encaminhar e receber respostas mesmo quando a rede comum falha.
+                </p>
+            </article>
+
+            <article class="content-card">
+                <h2>Como funciona</h2>
+                <ol class="simple-list">
+                    <li>A Defesa Civil emite um alerta oficial.</li>
+                    <li>Um gateway comunitario recebe e armazena a mensagem.</li>
+                    <li>A rota alternativa e usada quando a rede principal falha.</li>
+                    <li>O morador recebe o alerta e envia seu status.</li>
+                    <li>O retorno aparece no painel da Defesa Civil.</li>
+                </ol>
+            </article>
+
+            <article class="content-card">
+                <h2>Limites do prototipo</h2>
+                <p>
+                    Este site nao implementa rede real, satelite, LoRa, banco de dados ou monitoramento
+                    em tempo real. Ele mostra a logica por meio de telas estaticas e pequenas interacoes
+                    em JavaScript.
+                </p>
+            </article>
+        </section>
+
+        <section class="cards-grid" aria-labelledby="tecnologias">
+            <header class="section-heading">
+                <p class="tag">Arquitetura da solucao</p>
+                <h2 id="tecnologias">Tecnologias e conceitos usados</h2>
+            </header>
+
+            <article class="info-card">
+                <img class="feature-icon solution-icon" src="../img/tecnologia-dtn.png" alt="Icone de rede DTN">
+                <h3>DTN</h3>
+                <p>Inspiracao em redes tolerantes a atraso e interrupcao, usadas quando a conexao nao e constante.</p>
+            </article>
+
+            <article class="info-card">
+                <img class="feature-icon solution-icon" src="../img/tecnologia-store-carry-forward.png" alt="Icone de store-carry-forward">
+                <h3>Store-carry-forward</h3>
+                <p>A mensagem pode ser armazenada e encaminhada depois, quando surgir uma nova oportunidade de conexao.</p>
+            </article>
+
+            <article class="info-card">
+                <img class="feature-icon solution-icon" src="../img/tecnologia-gateway-comunitario.png" alt="Icone de gateway comunitario">
+                <h3>Gateway comunitario</h3>
+                <p>Ponto local que representa a captura, guarda e redistribuicao dos alertas para a comunidade.</p>
+            </article>
+
+            <article class="info-card">
+                <img class="feature-icon solution-icon" src="../img/tecnologia-canal-retorno.png" alt="Icone de canal de retorno">
+                <h3>Canal de retorno</h3>
+                <p>Respostas como estou seguro, evacuei ou preciso de resgate voltam para apoiar a Defesa Civil.</p>
+            </article>
+        </section>
+
+        <nav class="next-actions" aria-label="Proximos passos">
+            <a class="btn primary" href="simulador.html">Ver rota resiliente</a>
+            <a class="btn secondary" href="painel.html">Abrir painel</a>
+        </nav>
     </main>
 
     <footer class="site-footer">
-        <p>Pulsar | Projeto academico FIAP 2026</p>
+        <p>Pulsar | Global Solution FIAP 2026/1 | ADS 1 semestre</p>
+        <p>Prototipo academico para fins de demonstracao.</p>
     </footer>
 
     <script src="../js/script.js"></script>
