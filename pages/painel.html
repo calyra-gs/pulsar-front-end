@@ -24,10 +24,12 @@
                     <li><a href="sobre.html">Solucao</a></li>
                     <li><a href="simulador.html">Simulacao</a></li>
                     <li><a class="active" href="painel.html">Painel</a></li>
+                    <li><a href="emitir-alerta.html">Emitir alerta</a></li>
+                    <li><a href="retornos.html">Retornos</a></li>
                     <li><a href="morador.html">Morador</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="integrantes.html">Integrantes</a></li>
                     <li><a href="contato.html">Contato</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,14 +37,178 @@
 
     <main>
         <section class="dashboard-title">
-            <p class="tag">Defesa Civil | Operacao simulada</p>
-            <h1>Painel da Defesa Civil</h1>
-            <p>Esta tela reunira indicadores, areas monitoradas e ocorrencias recentes.</p>
+            <header>
+                <p class="tag">Defesa Civil | Operacao simulada</p>
+                <h1>Painel da Defesa Civil</h1>
+                <p>Visao integrada da situacao, alertas e respostas recebidas.</p>
+            </header>
+
+            <a class="btn alert" href="emitir-alerta.html">Emitir novo alerta</a>
+        </section>
+
+        <section class="metric-grid" aria-label="Indicadores principais">
+            <article class="metric-card">
+                <span>Alertas ativos</span>
+                <strong>18</strong>
+                <p>+3 nas ultimas 3h</p>
+            </article>
+
+            <article class="metric-card">
+                <span>Areas monitoradas</span>
+                <strong>32</strong>
+                <p>Bairros e regioes</p>
+            </article>
+
+            <article class="metric-card">
+                <span>Moradores com retorno</span>
+                <strong>8.764</strong>
+                <p>58% do total estimado</p>
+            </article>
+
+            <article class="metric-card warning">
+                <span>Pedidos de socorro</span>
+                <strong>64</strong>
+                <p>+8 nas ultimas 3h</p>
+            </article>
+
+            <article class="metric-card danger">
+                <span>Areas sem resposta</span>
+                <strong>3</strong>
+                <p>Requerem atencao</p>
+            </article>
+        </section>
+
+        <section class="dashboard-grid">
+            <article class="panel-card map-card">
+                <header class="panel-title">
+                    <h2>Mapa de risco e monitoramento</h2>
+                    <a class="text-link" href="retornos.html">Ver retornos</a>
+                </header>
+
+                <section class="risk-map-placeholder" aria-label="Mapa simulado de risco por area">
+                    <article class="map-region critical">
+                        <strong>Centro</strong>
+                        <span>Critico</span>
+                    </article>
+
+                    <article class="map-region high">
+                        <strong>Sao Pedro</strong>
+                        <span>Alto</span>
+                    </article>
+
+                    <article class="map-region high">
+                        <strong>Vila Norte</strong>
+                        <span>Alto</span>
+                    </article>
+
+                    <article class="map-region medium">
+                        <strong>Boa Vista</strong>
+                        <span>Moderado</span>
+                    </article>
+                </section>
+            </article>
+
+            <article class="panel-card">
+                <header class="panel-title">
+                    <h2>Areas monitoradas</h2>
+                    <a class="text-link" href="retornos.html">Ver todas</a>
+                </header>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Area</th>
+                                <th>Risco</th>
+                                <th>Alertas</th>
+                                <th>Respostas</th>
+                                <th>Situacao</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Centro</td>
+                                <td><span class="status critical">Critico</span></td>
+                                <td>Sim</td>
+                                <td>1.248</td>
+                                <td><span class="pill danger">Critica</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Sao Pedro</td>
+                                <td><span class="status high">Alto</span></td>
+                                <td>Sim</td>
+                                <td>1.102</td>
+                                <td><span class="pill warning">Atencao</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Vila Norte</td>
+                                <td><span class="status high">Alto</span></td>
+                                <td>Sim</td>
+                                <td>987</td>
+                                <td><span class="pill warning">Atencao</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Boa Vista</td>
+                                <td><span class="status medium">Moderado</span></td>
+                                <td>Sim</td>
+                                <td>742</td>
+                                <td><span class="pill info">Monitorada</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <aside class="panel-card">
+                <h2>Leitura situacional</h2>
+                <ul class="bar-list">
+                    <li><span>Centro</span><strong>2.970</strong><span class="bar-92"></span></li>
+                    <li><span>Sao Pedro</span><strong>2.013</strong><span class="bar-72"></span></li>
+                    <li><span>Vila Norte</span><strong>1.654</strong><span class="bar-60"></span></li>
+                    <li><span>Boa Vista</span><strong>1.213</strong><span class="bar-45"></span></li>
+                </ul>
+
+                <a class="btn secondary full" href="retornos.html">Abrir retornos</a>
+            </aside>
+        </section>
+
+        <section class="section-block">
+            <header class="panel-title">
+                <h2>Ocorrencias recentes</h2>
+                <a class="text-link" href="emitir-alerta.html">Novo alerta</a>
+            </header>
+
+            <section class="occurrence-grid" aria-label="Lista de ocorrencias recentes">
+                <article class="occurrence-card">
+                    <span class="pill danger">Critico</span>
+                    <strong>Enchente subita</strong>
+                    <p>Centro | Rua das Palmeiras, 532</p>
+                    <small>12 pedidos | Equipes a caminho</small>
+                </article>
+
+                <article class="occurrence-card">
+                    <span class="pill warning">Alto</span>
+                    <strong>Deslizamento de terra</strong>
+                    <p>Sao Pedro | Rua da Encosta, 120</p>
+                    <small>8 pedidos | Monitorando</small>
+                </article>
+
+                <article class="occurrence-card">
+                    <span class="pill warning">Alto</span>
+                    <strong>Alagamento</strong>
+                    <p>Vila Norte | Av. das Aguas, 210</p>
+                    <small>15 pedidos | Equipe enviada</small>
+                </article>
+            </section>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>Pulsar | Projeto academico FIAP 2026</p>
+        <p>Pulsar | Global Solution FIAP 2026/1 | ADS 1 semestre</p>
+        <p>Dados simulados | Uso academico</p>
     </footer>
 
     <script src="../js/script.js"></script>

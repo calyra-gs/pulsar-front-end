@@ -24,10 +24,12 @@
                     <li><a href="sobre.html">Solucao</a></li>
                     <li><a class="active" href="simulador.html">Simulacao</a></li>
                     <li><a href="painel.html">Painel</a></li>
+                    <li><a href="emitir-alerta.html">Emitir alerta</a></li>
+                    <li><a href="retornos.html">Retornos</a></li>
                     <li><a href="morador.html">Morador</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="integrantes.html">Integrantes</a></li>
                     <li><a href="contato.html">Contato</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,12 +39,133 @@
         <section class="page-hero simulation-hero">
             <p class="tag">Operacao simulada</p>
             <h1>Simulacao da rota resiliente</h1>
-            <p>Esta tela mostrara o caminho do alerta quando a rede principal estiver indisponivel.</p>
+            <p>
+                Demonstracao didatica da logica store-carry-forward: a mensagem pode ser guardada
+                e encaminhada quando uma nova conexao aparece.
+            </p>
+        </section>
+
+        <aside class="notice">
+            <strong>Atencao:</strong> este ambiente e uma simulacao educacional. Os eventos e tempos nao representam monitoramento real.
+        </aside>
+
+        <section class="simulator-layout">
+            <article class="simulator-board">
+                <h2>Fluxo de comunicacao</h2>
+
+                <ol class="sim-steps" id="simSteps">
+                    <li class="sim-step active" data-step="0">
+                        <span class="sim-number">1</span>
+                        <img class="sim-icon" src="../img/sim-alerta-oficial.png" alt="Icone de alerta oficial">
+                        <div>
+                            <strong>Mensagem criada</strong>
+                            <p>Defesa Civil</p>
+                        </div>
+                    </li>
+
+                    <li class="sim-step" data-step="1">
+                        <span class="sim-number">2</span>
+                        <img class="sim-icon" src="../img/tecnologia-gateway-comunitario.png" alt="Icone de gateway comunitario">
+                        <div>
+                            <strong>Armazenamento</strong>
+                            <p>Gateway comunitario</p>
+                        </div>
+                    </li>
+
+                    <li class="sim-step danger" data-step="2">
+                        <span class="sim-number">3</span>
+                        <img class="sim-icon" src="../img/sim-link-indisponivel.png" alt="Icone de link indisponivel">
+                        <div>
+                            <strong>Link indisponivel</strong>
+                            <p>No intermediario</p>
+                        </div>
+                    </li>
+
+                    <li class="sim-step wait" data-step="3">
+                        <span class="sim-number">4</span>
+                        <img class="sim-icon" src="../img/sim-rota-alternativa.png" alt="Icone de rota alternativa">
+                        <div>
+                            <strong>Nova janela</strong>
+                            <p>Rota alternativa</p>
+                        </div>
+                    </li>
+
+                    <li class="sim-step" data-step="4">
+                        <span class="sim-number">5</span>
+                        <img class="sim-icon" src="../img/sim-morador.png" alt="Icone de morador recebendo alerta">
+                        <div>
+                            <strong>Entrega</strong>
+                            <p>Morador</p>
+                        </div>
+                    </li>
+
+                    <li class="sim-step success" data-step="5">
+                        <span class="sim-number">6</span>
+                        <img class="sim-icon" src="../img/sim-retorno.png" alt="Icone de retorno de status ou socorro">
+                        <div>
+                            <strong>Retorno</strong>
+                            <p>Status ou socorro</p>
+                        </div>
+                    </li>
+
+                    <li class="sim-step success" data-step="6">
+                        <span class="sim-number">7</span>
+                        <img class="sim-icon" src="../img/sim-defesa-civil.png" alt="Icone da Defesa Civil">
+                        <div>
+                            <strong>Painel atualizado</strong>
+                            <p>Defesa Civil</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <p class="route-status" id="routeStatus">
+                    <strong>Status atual:</strong>
+                    <span>Mensagem criada pela Defesa Civil.</span>
+                </p>
+
+                <section class="sim-controls" aria-label="Controles da simulacao">
+                    <button class="btn primary" type="button" id="btnProximaEtapa">Proxima etapa</button>
+                    <button class="btn secondary" type="button" id="btnReiniciarSimulacao">Reiniciar</button>
+                    <a class="btn ghost" href="morador.html">Ver morador</a>
+                </section>
+            </article>
+
+            <aside class="side-panel simulation-status-panel">
+                <h2>Estado da simulacao</h2>
+                <ol class="timeline-list" id="simTimeline">
+                    <li><strong>10:00:00</strong> Mensagem criada.</li>
+                </ol>
+            </aside>
+        </section>
+
+        <section class="content-grid simulation-info-grid">
+            <article class="content-card">
+                <h2>O que e DTN?</h2>
+                <p>
+                    E uma abordagem para ambientes com conexao intermitente. A mensagem pode ser armazenada
+                    e carregada ate existir uma nova oportunidade de envio.
+                </p>
+            </article>
+
+            <article class="content-card">
+                <h2>Por que usar no projeto?</h2>
+                <p>
+                    Porque a proposta do Pulsar e mostrar que o alerta e o retorno nao dependem apenas de
+                    uma rede continua e perfeita.
+                </p>
+            </article>
+
+            <article class="content-card">
+                <h2>Proxima etapa</h2>
+                <p>Depois de entender a rota, veja como a Defesa Civil acompanha a situacao no painel.</p>
+                <a class="text-link" href="painel.html">Abrir painel da Defesa Civil</a>
+            </article>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>Pulsar | Projeto academico FIAP 2026</p>
+        <p>Pulsar | Global Solution FIAP 2026/1 | ADS 1 semestre</p>
+        <p>Prototipo academico para fins de demonstracao.</p>
     </footer>
 
     <script src="../js/script.js"></script>
