@@ -1081,6 +1081,178 @@ td:first-child {
     margin-top: 0;
 }
 
+.resident-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.resident-alert,
+.resident-response {
+    background: var(--fundo-superficie);
+    border: 1px solid var(--borda-suave);
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    padding: 28px;
+}
+
+.resident-alert {
+    display: grid;
+    gap: 14px;
+    border-color: rgba(225, 29, 46, 0.28);
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--laranja-suave) 100%);
+}
+
+.resident-logo {
+    width: 138px;
+    height: auto;
+}
+
+.alert-badge {
+    justify-self: start;
+    border-radius: 999px;
+    background: var(--vermelho);
+    color: #FFFFFF;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 6px 10px;
+    text-transform: uppercase;
+}
+
+.resident-alert h1 {
+    color: var(--vermelho);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.subtitle {
+    color: var(--azul-principal);
+    font-weight: 700;
+}
+
+.alert-details {
+    display: grid;
+    gap: 12px;
+    border-top: 1px solid rgba(225, 29, 46, 0.18);
+    margin-top: 6px;
+    padding-top: 18px;
+}
+
+.alert-details p {
+    color: var(--texto-principal);
+}
+
+.alert-details strong {
+    color: var(--azul-principal);
+}
+
+.resident-response h2 {
+    margin-bottom: 8px;
+}
+
+.resident-response > p {
+    margin-bottom: 22px;
+}
+
+.response-options {
+    display: grid;
+    gap: 12px;
+    border: 0;
+    margin-bottom: 18px;
+}
+
+.response-options legend {
+    color: var(--azul-principal);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.response-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    border: 1px solid var(--borda-suave);
+    border-radius: 8px;
+    background: #FFFFFF;
+    cursor: pointer;
+    padding: 16px;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.response-card:hover {
+    border-color: var(--azul-institucional);
+    transform: translateY(-1px);
+}
+
+.response-card input {
+    accent-color: var(--azul-principal);
+    margin-top: 4px;
+}
+
+.response-card strong {
+    color: var(--azul-principal);
+    display: block;
+}
+
+.response-card small {
+    color: var(--texto-secundario);
+}
+
+.response-card.rescue {
+    border-color: rgba(225, 29, 46, 0.28);
+}
+
+.response-card.rescue strong {
+    color: var(--vermelho);
+}
+
+.rescue-details {
+    display: none;
+    border: 1px solid rgba(225, 29, 46, 0.22);
+    border-radius: 8px;
+    background: rgba(225, 29, 46, 0.06);
+    margin-bottom: 18px;
+    padding: 18px;
+}
+
+.rescue-details.show {
+    display: block;
+}
+
+.rescue-details h3 {
+    color: var(--vermelho);
+    margin-bottom: 14px;
+}
+
+.gps-status-box {
+    display: grid;
+    gap: 8px;
+    border: 1px solid rgba(23, 75, 154, 0.18);
+    border-radius: 8px;
+    background: #FFFFFF;
+    padding: 16px;
+}
+
+.gps-status-box p,
+.gps-status-box label,
+.gps-status-box small {
+    color: var(--texto-principal);
+}
+
+.gps-status-box strong,
+.gps-status-box label {
+    color: var(--azul-principal);
+}
+
+.gps-status-box input {
+    border: 1px solid var(--borda-suave);
+    border-radius: 6px;
+    background: var(--fundo-principal);
+    color: var(--texto-principal);
+    padding: 12px 14px;
+}
+
 .site-footer {
     border-top: 1px solid var(--borda-suave);
     background: var(--fundo-superficie);
@@ -1146,6 +1318,7 @@ td:first-child {
     .dashboard-title,
     .dashboard-grid,
     .form-preview-layout,
+    .resident-layout,
     .problem-band {
         grid-template-columns: 1fr;
     }
@@ -1173,6 +1346,8 @@ td:first-child {
     .alert-preview,
     .phone-alert-card,
     .validation-box,
+    .resident-alert,
+    .resident-response,
     .problem-band {
         padding: 20px;
     }
@@ -1220,6 +1395,7 @@ td:first-child {
     .simulator-layout,
     .dashboard-grid,
     .form-preview-layout,
+    .resident-layout,
     .problem-band {
         grid-template-columns: 1fr;
     }
