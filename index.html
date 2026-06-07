@@ -3,33 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulsar | Inteligência Espacial para Resiliência Climática</title>
-
+    <title>Pulsar | Comunicacao emergencial resiliente</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a class="brand" href="index.html">
+                <img src="img/pulsar_icone_transparente.png" alt="Icone Pulsar">
+                <span>Pulsar</span>
+            </a>
 
-    <header>
-        <h1>PULSAR</h1>
-        <p>Inteligência Espacial para Resiliência Climática</p>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                Menu
+            </button>
+
+            <nav class="site-nav" id="menu-principal">
+                <ul>
+                    <li><a class="active" href="index.html">Inicio</a></li>
+                    <li><a href="pages/sobre.html">Solucao</a></li>
+                    <li><a href="pages/simulador.html">Simulacao</a></li>
+                    <li><a href="pages/painel.html">Painel</a></li>
+                    <li><a href="pages/morador.html">Morador</a></li>
+                    <li><a href="pages/faq.html">FAQ</a></li>
+                    <li><a href="pages/integrantes.html">Integrantes</a></li>
+                    <li><a href="pages/contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
+        <section class="hero-section home-hero">
+            <article class="hero-text">
+                <p class="tag">MVP academico | Space Connect | FIAP 2026/1</p>
+                <h1>Comunicacao emergencial resiliente para quando a rede falha.</h1>
+                <p>
+                    O Pulsar simula uma rota alternativa para alertas oficiais e retornos da populacao
+                    em cenarios de risco climatico, usando a logica de comunicacao tolerante a falhas.
+                </p>
 
-        <section>
-            <h2>Monitoramento Inteligente de Riscos Climáticos</h2>
-
-            <p>
-                O Pulsar utiliza dados satelitais, inteligência artificial e análise geoespacial
-                para apoiar governos, defesas civis e comunidades na prevenção de desastres naturais.
-            </p>
-
+                <nav class="hero-actions" aria-label="Acoes principais">
+                    <a class="btn primary" href="pages/sobre.html">Conhecer a solucao</a>
+                    <a class="btn secondary" href="pages/simulador.html">Ver simulacao</a>
+                </nav>
+            </article>
         </section>
-
     </main>
 
-    <script src="js/script.js"></script>
+    <footer class="site-footer">
+        <p>Pulsar | Projeto academico FIAP 2026</p>
+    </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
