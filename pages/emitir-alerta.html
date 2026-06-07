@@ -24,10 +24,12 @@
                     <li><a href="sobre.html">Solucao</a></li>
                     <li><a href="simulador.html">Simulacao</a></li>
                     <li><a href="painel.html">Painel</a></li>
+                    <li><a class="active" href="emitir-alerta.html">Emitir alerta</a></li>
+                    <li><a href="retornos.html">Retornos</a></li>
                     <li><a href="morador.html">Morador</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="integrantes.html">Integrantes</a></li>
                     <li><a href="contato.html">Contato</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,14 +37,120 @@
 
     <main>
         <section class="dashboard-title">
-            <p class="tag">Defesa Civil</p>
-            <h1>Emissao de alerta oficial</h1>
-            <p>Esta tela tera o formulario para simular a criacao de um alerta oficial.</p>
+            <header>
+                <p class="tag">Defesa Civil</p>
+                <h1>Emissao de alerta oficial</h1>
+                <p>Preencha os dados principais e veja uma pre-visualizacao do alerta.</p>
+            </header>
+
+            <a class="btn secondary" href="painel.html">Voltar ao painel</a>
+        </section>
+
+        <section class="form-preview-layout">
+            <article class="form-card">
+                <h2>Dados do alerta</h2>
+
+                <form id="alertForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="alertArea">Area de risco</label>
+                            <select id="alertArea" name="alertArea">
+                                <option value="">Selecione a area</option>
+                                <option>Centro - Area Ribeirinha</option>
+                                <option>Sao Pedro - Encosta</option>
+                                <option>Vila Norte - Baixada</option>
+                            </select>
+                            <small class="error-message" id="erroAlertArea"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alertType">Tipo de desastre</label>
+                            <select id="alertType" name="alertType">
+                                <option value="">Selecione o tipo</option>
+                                <option>Enchente</option>
+                                <option>Deslizamento</option>
+                                <option>Alagamento</option>
+                                <option>Chuva intensa</option>
+                            </select>
+                            <small class="error-message" id="erroAlertType"></small>
+                        </div>
+                    </div>
+
+                    <fieldset class="choice-group">
+                        <legend>Nivel de risco</legend>
+                        <label><input type="radio" name="risk" value="Baixo"> Baixo</label>
+                        <label><input type="radio" name="risk" value="Moderado"> Moderado</label>
+                        <label><input type="radio" name="risk" value="Alto" checked> Alto</label>
+                        <label><input type="radio" name="risk" value="Critico"> Critico</label>
+                    </fieldset>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="validDate">Validade</label>
+                            <input type="date" id="validDate" name="validDate" value="2026-06-07">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="validTime">Horario</label>
+                            <input type="time" id="validTime" name="validTime" value="18:00">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alertMessage">Mensagem curta do alerta</label>
+                        <textarea id="alertMessage" name="alertMessage" maxlength="160" placeholder="Ex.: Evite areas baixas e dirija-se ao ponto de encontro seguro."></textarea>
+                        <small class="form-counter"><span id="alertCounter">0</span>/160</small>
+                        <small class="error-message" id="erroAlertMessage"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meetingPoint">Ponto de encontro recomendado</label>
+                        <input type="text" id="meetingPoint" name="meetingPoint" placeholder="Ex.: Escola Municipal Maria das Dores">
+                        <small class="error-message" id="erroMeetingPoint"></small>
+                    </div>
+
+                    <section class="form-actions" aria-label="Acoes do formulario">
+                        <button class="btn secondary" type="reset">Salvar rascunho</button>
+                        <button class="btn primary" type="submit">Emitir alerta</button>
+                    </section>
+
+                    <p class="success-message" id="alertSuccess"></p>
+                </form>
+            </article>
+
+            <aside class="alert-preview">
+                <h2>Pre-visualizacao do alerta</h2>
+
+                <article class="phone-alert-card">
+                    <p class="alert-label">Alerta oficial</p>
+                    <h3 id="previewType">Risco elevado</h3>
+                    <p><strong>Area afetada:</strong> <span id="previewArea">Area ainda nao selecionada</span></p>
+                    <p><strong>Orientacao:</strong> <span id="previewMessage">A mensagem aparecera aqui.</span></p>
+                    <p><strong>Ponto de encontro:</strong> <span id="previewPoint">Ponto ainda nao informado</span></p>
+                    <p><strong>Validade:</strong> <span id="previewValidity">07/06/2026 as 18:00</span></p>
+                </article>
+
+                <article class="validation-box">
+                    <h3>Validacoes obrigatorias</h3>
+                    <ul>
+                        <li>Area de risco</li>
+                        <li>Tipo de desastre</li>
+                        <li>Mensagem do alerta</li>
+                        <li>Ponto de encontro</li>
+                    </ul>
+                </article>
+
+                <nav class="next-actions vertical" aria-label="Acompanhar alerta">
+                    <a class="btn secondary full" href="simulador.html">Acompanhar na simulacao</a>
+                    <a class="btn ghost full" href="painel.html">Ver no painel</a>
+                </nav>
+            </aside>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>Pulsar | Projeto academico FIAP 2026</p>
+        <p>Pulsar | Global Solution FIAP 2026/1 | ADS 1 semestre</p>
+        <p>Emissao simulada | Sem envio real</p>
     </footer>
 
     <script src="../js/script.js"></script>
