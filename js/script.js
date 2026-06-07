@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     iniciarMenu();
     iniciarFormularioAlerta();
     iniciarSimulador();
+    iniciarMorador();
 });
 
 function iniciarMenu() {
@@ -192,4 +193,58 @@ function iniciarSimulador() {
     }
 
     atualizarSimulador();
+}
+
+function iniciarMorador() {
+    const formulario = document.getElementById("residentForm");
+
+    if (!formulario) {
+        return;
+    }
+
+    const opcoes = document.querySelectorAll("input[name='residentStatus']");
+    const detalhes = document.getElementById("rescueDetails");
+    const observacao = document.getElementById("residentNote");
+
+    opcoes.forEach(function (opcao) {
+        opcao.addEventListener("change", function () {
+            atualizarDetalhesResgate();
+        });
+    });
+
+    observacao.addEventListener("input", function () {
+        document.getElementById("residentCounter").textContent = observacao.value.length;
+    });
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const statusSelecionado = document.querySelector("input[name='residentStatus']:checked").value;
+        const coordenadaDtn = document.getElementById("gpsDtn").value.trim();
+
+        if (statusSelecionado === "Preciso de resgate" && coordenadaDtn === "") {
+            document.getElementById("residentSuccess").textContent = "Para resgate, confirme o status GPS/DTN.";
+            return;
+        }
+
+        let mensagem = "Status registrado na simulacao: " + statusSelecionado + ".";
+
+        if (statusSelecionado === "Preciso de resgate") {
+            mensagem += " Coordenada DTN anexada ao pedido.";
+        }
+
+        document.getElementById("residentSuccess").textContent = mensagem;
+    });
+
+    function atualizarDetalhesResgate() {
+        const statusSelecionado = document.querySelector("input[name='residentStatus']:checked").value;
+
+        if (statusSelecionado === "Preciso de resgate") {
+            detalhes.classList.add("show");
+        } else {
+            detalhes.classList.remove("show");
+        }
+    }
+
+    atualizarDetalhesResgate();
 }
