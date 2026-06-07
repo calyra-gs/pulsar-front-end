@@ -24,10 +24,12 @@
                     <li><a href="pages/sobre.html">Solucao</a></li>
                     <li><a href="pages/simulador.html">Simulacao</a></li>
                     <li><a href="pages/painel.html">Painel</a></li>
+                    <li><a href="pages/emitir-alerta.html">Emitir alerta</a></li>
+                    <li><a href="pages/retornos.html">Retornos</a></li>
                     <li><a href="pages/morador.html">Morador</a></li>
                     <li><a href="pages/faq.html">FAQ</a></li>
-                    <li><a href="pages/integrantes.html">Integrantes</a></li>
                     <li><a href="pages/contato.html">Contato</a></li>
+                    <li><a href="pages/integrantes.html">Integrantes</a></li>
                 </ul>
             </nav>
         </div>
@@ -39,20 +41,135 @@
                 <p class="tag">MVP academico | Space Connect | FIAP 2026/1</p>
                 <h1>Comunicacao emergencial resiliente para quando a rede falha.</h1>
                 <p>
-                    O Pulsar simula uma rota alternativa para alertas oficiais e retornos da populacao
-                    em cenarios de risco climatico, usando a logica de comunicacao tolerante a falhas.
+                    O Pulsar simula uma solucao complementar a Defesa Civil para fazer o alerta oficial chegar
+                    e o pedido de socorro voltar mesmo em cenarios de rede degradada.
                 </p>
 
                 <nav class="hero-actions" aria-label="Acoes principais">
                     <a class="btn primary" href="pages/sobre.html">Conhecer a solucao</a>
                     <a class="btn secondary" href="pages/simulador.html">Ver simulacao</a>
                 </nav>
+
+                <p class="small-note">Inspirado em DTN | Comunicacao store-carry-forward | Prototipo academico</p>
             </article>
+
+            <aside class="home-summary" aria-label="Resumo do problema">
+                <p class="tag">Ultimo quilometro</p>
+                <h2>Quando a rede cai, o alerta e o retorno precisam continuar.</h2>
+                <ul>
+                    <li>Alerta oficial da Defesa Civil.</li>
+                    <li>Mensagem armazenada por gateway comunitario.</li>
+                    <li>Morador responde com status ou pedido de socorro.</li>
+                </ul>
+                <a class="text-link" href="pages/sobre.html">Entender o conceito do Pulsar</a>
+            </aside>
+        </section>
+
+        <section class="communication-journey" aria-labelledby="jornada-comunicacao">
+            <header class="section-heading">
+                <p class="tag">Jornada da comunicacao</p>
+                <h2 id="jornada-comunicacao">Do alerta oficial ao retorno no painel</h2>
+                <p>
+                    A mensagem e criada, armazenada quando necessario, encaminhada por rota resiliente
+                    e retorna como status para a Defesa Civil.
+                </p>
+            </header>
+
+            <figure class="journey-image-box">
+                <img src="img/jornada-comunicacao.png" alt="Jornada de comunicacao do Pulsar, da emissao do alerta ate o retorno no painel.">
+            </figure>
+        </section>
+
+        <section class="home-organized-grid">
+            <article class="home-panel">
+                <header class="section-heading">
+                    <p class="tag">Diferenciais</p>
+                    <h2 id="diferenciais">O que o Pulsar demonstra</h2>
+                </header>
+
+                <section class="home-feature-grid" aria-label="Diferenciais do Pulsar">
+                    <article class="info-card">
+                        <img class="feature-icon" src="img/diferencial-alerta-oficial.png" alt="Icone de alerta oficial">
+                        <h3>Alerta oficial</h3>
+                        <p>Mensagem curta, priorizada e enviada pela Defesa Civil.</p>
+                    </article>
+
+                    <article class="info-card">
+                        <img class="feature-icon" src="img/diferencial-gateway-comunitario.png" alt="Icone de gateway comunitario">
+                        <h3>Gateway comunitario</h3>
+                        <p>Recebe, guarda e repassa mensagens quando possivel.</p>
+                    </article>
+
+                    <article class="info-card">
+                        <img class="feature-icon" src="img/diferencial-rota-resiliente.png" alt="Icone de rota resiliente">
+                        <h3>Rota resiliente</h3>
+                        <p>A mensagem espera uma nova oportunidade de conexao.</p>
+                    </article>
+
+                    <article class="info-card">
+                        <img class="feature-icon" src="img/diferencial-canal-volta.png" alt="Icone de canal de volta">
+                        <h3>Canal de volta</h3>
+                        <p>O morador informa se esta seguro ou precisa de resgate.</p>
+                    </article>
+                </section>
+            </article>
+
+            <article class="home-panel">
+                <header class="section-heading">
+                    <p class="tag">Demonstracao</p>
+                    <h2 id="jornada">Paginas conectadas da solucao</h2>
+                </header>
+
+                <nav class="journey-grid compact-links" aria-label="Paginas da demonstracao">
+                    <a class="journey-card" href="pages/painel.html">
+                        <strong>Painel da Defesa Civil</strong>
+                        <span>Visao geral e pedidos de socorro.</span>
+                    </a>
+
+                    <a class="journey-card" href="pages/emitir-alerta.html">
+                        <strong>Emissao de alerta</strong>
+                        <span>Formulario e previa oficial.</span>
+                    </a>
+
+                    <a class="journey-card" href="pages/simulador.html">
+                        <strong>Rota resiliente</strong>
+                        <span>Fluxo em etapas.</span>
+                    </a>
+
+                    <a class="journey-card" href="pages/morador.html">
+                        <strong>Resposta do morador</strong>
+                        <span>Status ou resgate.</span>
+                    </a>
+
+                    <a class="journey-card" href="pages/retornos.html">
+                        <strong>Retornos recebidos</strong>
+                        <span>Consciencia situacional.</span>
+                    </a>
+                </nav>
+            </article>
+        </section>
+
+        <section class="problem-band home-problem">
+            <header>
+                <p class="tag">Problema</p>
+                <h2>O ultimo quilometro fica vulneravel quando a rede cai.</h2>
+                <p>
+                    Em desastres, energia, antenas e internet podem falhar. O Pulsar nao substitui os canais oficiais:
+                    ele mostra uma camada complementar para ampliar a chance de entrega e retorno.
+                </p>
+            </header>
+
+            <ul>
+                <li>Rede movel congestionada ou indisponivel.</li>
+                <li>Comunidades isoladas e de dificil acesso.</li>
+                <li>Respostas da populacao sem caminho de volta.</li>
+            </ul>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>Pulsar | Projeto academico FIAP 2026</p>
+        <p>Pulsar | Global Solution FIAP 2026/1 | ADS 1 semestre</p>
+        <p>Prototipo academico para fins de demonstracao.</p>
     </footer>
 
     <script src="js/script.js"></script>
