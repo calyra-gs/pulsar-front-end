@@ -24,25 +24,116 @@
                     <li><a href="sobre.html">Solucao</a></li>
                     <li><a href="simulador.html">Simulacao</a></li>
                     <li><a href="painel.html">Painel</a></li>
+                    <li><a href="emitir-alerta.html">Emitir alerta</a></li>
+                    <li><a href="retornos.html">Retornos</a></li>
                     <li><a class="active" href="morador.html">Morador</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="integrantes.html">Integrantes</a></li>
                     <li><a href="contato.html">Contato</a></li>
+                    <li><a href="integrantes.html">Integrantes</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="page-hero resident-hero">
-            <p class="tag">Morador</p>
-            <h1>Visao do morador</h1>
-            <p>Esta tela simulara o recebimento de um alerta oficial e o envio de status para a Defesa Civil.</p>
+        <section class="resident-layout">
+            <article class="resident-alert">
+                <img class="resident-logo" src="../img/pulsar_logo_fundo_transparente.png" alt="Logo Pulsar">
+                <p class="alert-badge">Alerta ativo</p>
+                <h1>Alerta oficial</h1>
+                <p class="subtitle">Mensagem da Defesa Civil</p>
+
+                <section class="alert-details" aria-label="Detalhes do alerta">
+                    <p><strong>Area afetada:</strong> Bairro Centro e adjacencias</p>
+                    <p><strong>Tipo de risco:</strong> Alto risco de enchente</p>
+                    <p><strong>Orientacao:</strong> Evacue areas baixas e dirija-se a um ponto seguro.</p>
+                    <p><strong>Ponto de encontro:</strong> Escola Municipal Rui Barbosa</p>
+                </section>
+            </article>
+
+            <article class="resident-response">
+                <h2>Responder a Defesa Civil</h2>
+                <p>Informe sua situacao para apoiar a resposta da equipe.</p>
+
+                <form id="residentForm" novalidate>
+                    <fieldset class="response-options">
+                        <legend>Sua situacao atual</legend>
+
+                        <label class="response-card">
+                            <input type="radio" name="residentStatus" value="Estou seguro" checked>
+                            <span>
+                                <strong>Estou seguro</strong>
+                                <small>Sem necessidade de ajuda neste momento.</small>
+                            </span>
+                        </label>
+
+                        <label class="response-card">
+                            <input type="radio" name="residentStatus" value="Ja evacuei">
+                            <span>
+                                <strong>Ja evacuei</strong>
+                                <small>Estou em local seguro.</small>
+                            </span>
+                        </label>
+
+                        <label class="response-card rescue">
+                            <input type="radio" name="residentStatus" value="Preciso de resgate">
+                            <span>
+                                <strong>Preciso de resgate</strong>
+                                <small>Estou em risco e preciso de ajuda.</small>
+                            </span>
+                        </label>
+                    </fieldset>
+
+                    <section class="rescue-details" id="rescueDetails">
+                        <h3>Detalhes do resgate</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="peopleCount">Quantidade de pessoas (opcional)</label>
+                                <input type="number" id="peopleCount" min="1" placeholder="Ex.: 2">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vulnerablePeople">Pessoas vulneraveis (opcional)</label>
+                                <select id="vulnerablePeople">
+                                    <option value="">Selecione</option>
+                                    <option>Idoso</option>
+                                    <option>Crianca</option>
+                                    <option>Gestante</option>
+                                    <option>Nao ha</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <section class="gps-status-box" aria-label="Status GPS DTN">
+                            <p><strong>Status GPS/DTN obrigatorio:</strong> ativo no modo resgate</p>
+                            <label for="gpsDtn">Coordenada pelo DTN</label>
+                            <input type="text" id="gpsDtn" value="-23.550520, -46.633308" readonly>
+                            <small>Coordenada simulada anexada automaticamente ao pedido.</small>
+                        </section>
+                    </section>
+
+                    <div class="form-group">
+                        <label for="residentNote">Observacao opcional</label>
+                        <textarea id="residentNote" maxlength="80" placeholder="Informe algo importante"></textarea>
+                        <small class="form-counter"><span id="residentCounter">0</span>/80</small>
+                    </div>
+
+                    <button class="btn primary full" type="submit">Enviar status</button>
+                    <p class="success-message" id="residentSuccess"></p>
+                </form>
+
+                <nav class="next-actions" aria-label="Proximas telas">
+                    <a class="btn secondary" href="retornos.html">Ver retorno no painel</a>
+                    <a class="btn ghost" href="simulador.html">Ver caminho da mensagem</a>
+                </nav>
+            </article>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>Pulsar | Projeto academico FIAP 2026</p>
+        <p>Pulsar | Global Solution FIAP 2026/1 | ADS 1 semestre</p>
+        <p>Resposta simulada | Sem envio real</p>
     </footer>
 
     <script src="../js/script.js"></script>
