@@ -1,0 +1,16 @@
+:root {
+    --azul-principal: #0B2B6F;
+    --azul-institucional: #174B9A;
+    --azul-tecnico: #235C85;
+    --fundo-principal: #F6F8FB;
+    --fundo-superficie: #FBFCFF;
+    --borda-suave: #D9E2EF;
+    --texto-principal: #11243D;
+    --texto-secundario: #64748B;
+    --laranja: #F28A00;
+    --laranja-suave: #FFF7EC;
+    --vermelho: #E11D2E;
+    --verde: #178D46;
+    --sombra: 0 10px 24px rgba(17, 36, 61, 0.08);
+}
+
