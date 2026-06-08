@@ -1304,6 +1304,77 @@ td:first-child {
     display: none;
 }
 
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.member-card {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 22px;
+    align-items: center;
+    background: var(--fundo-superficie);
+    border: 1px solid var(--borda-suave);
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    padding: 26px;
+}
+
+.member-avatar {
+    display: grid;
+    place-items: center;
+    width: 104px;
+    height: 104px;
+    border: 1px solid rgba(242, 138, 0, 0.35);
+    border-radius: 8px;
+    background: var(--laranja-suave);
+    color: var(--azul-principal);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.member-info {
+    min-width: 0;
+}
+
+.member-info h2 {
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    margin-top: 8px;
+}
+
+.member-details {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.member-details div {
+    display: grid;
+    gap: 2px;
+    border-left: 4px solid var(--laranja);
+    background: var(--fundo-principal);
+    border-radius: 6px;
+    padding: 10px 12px;
+}
+
+.member-details dt {
+    color: var(--azul-principal);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.member-details dd {
+    color: var(--texto-secundario);
+}
+
+.members-summary {
+    margin-top: 32px;
+}
+
 .site-footer {
     border-top: 1px solid var(--borda-suave);
     background: var(--fundo-superficie);
@@ -1414,8 +1485,20 @@ td:first-child {
     .occurrence-grid,
     .form-row,
     .choice-group,
+    .members-grid,
     .simulation-info-grid {
         grid-template-columns: 1fr;
+    }
+
+    .member-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .member-avatar {
+        width: 88px;
+        height: 88px;
+        font-size: 1.6rem;
     }
 
     .panel-title {
@@ -1457,7 +1540,8 @@ td:first-child {
     }
 
     .metric-grid,
-    .occurrence-grid {
+    .occurrence-grid,
+    .members-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -1470,3 +1554,107 @@ td:first-child {
     }
 }
 
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.contact-info-stack {
+    display: grid;
+    gap: 18px;
+}
+
+.contact-list {
+    display: grid;
+    gap: 14px;
+    list-style: none;
+    margin-top: 18px;
+}
+
+.contact-list li {
+    display: grid;
+    gap: 4px;
+    border-left: 4px solid var(--laranja);
+    background: var(--fundo-principal);
+    border-radius: 6px;
+    padding: 12px 14px;
+}
+
+.contact-list strong {
+    color: var(--azul-principal);
+}
+
+.contact-list span {
+    color: var(--texto-secundario);
+}
+
+@media (max-width: 991px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.faq-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.faq-list,
+.faq-side {
+    display: grid;
+    gap: 16px;
+}
+
+.faq-item {
+    background: var(--fundo-superficie);
+    border: 1px solid var(--borda-suave);
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: var(--azul-principal);
+    cursor: pointer;
+    font-weight: 700;
+    padding: 20px 22px;
+    text-align: left;
+}
+
+.faq-icon {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background: var(--laranja-suave);
+    color: var(--laranja);
+    flex: 0 0 auto;
+}
+
+.faq-answer {
+    display: none;
+    border-top: 1px solid var(--borda-suave);
+    padding: 0 22px 20px;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+.faq-item.open .faq-icon {
+    background: var(--azul-principal);
+    color: #FFFFFF;
+}
