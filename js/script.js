@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     iniciarMorador();
     iniciarFiltroRetornos();
     iniciarContato();
+    iniciarFaq();
 });
 
 function iniciarMenu() {
@@ -337,5 +338,25 @@ function iniciarContato() {
             limparErro("erroContactSubject");
             limparErro("erroContactMessage");
         }, 0);
+    });
+}
+
+function iniciarFaq() {
+    const itens = document.querySelectorAll(".faq-item");
+
+    if (itens.length === 0) {
+        return;
+    }
+
+    itens.forEach(function (item) {
+        const botao = item.querySelector(".faq-question");
+        const icone = item.querySelector(".faq-icon");
+
+        botao.addEventListener("click", function () {
+            const aberto = item.classList.toggle("open");
+
+            botao.setAttribute("aria-expanded", aberto ? "true" : "false");
+            icone.textContent = aberto ? "-" : "+";
+        });
     });
 }
