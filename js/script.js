@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     iniciarSimulador();
     iniciarMorador();
     iniciarFiltroRetornos();
+    iniciarContato();
 });
 
 function iniciarMenu() {
@@ -270,5 +271,71 @@ function iniciarFiltroRetornos() {
                 linha.classList.add("hidden-row");
             }
         });
+    });
+}
+
+function iniciarContato() {
+    const formulario = document.getElementById("contactForm");
+
+    if (!formulario) {
+        return;
+    }
+
+    const mensagem = document.getElementById("contactMessage");
+
+    mensagem.addEventListener("input", function () {
+        document.getElementById("contactCounter").textContent = mensagem.value.length;
+    });
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("contactName").value.trim();
+        const email = document.getElementById("contactEmail").value.trim();
+        const assunto = document.getElementById("contactSubject").value.trim();
+        const texto = document.getElementById("contactMessage").value.trim();
+
+        let contatoValido = true;
+
+        limparErro("erroContactName");
+        limparErro("erroContactEmail");
+        limparErro("erroContactSubject");
+        limparErro("erroContactMessage");
+        document.getElementById("contactSuccess").textContent = "";
+
+        if (nome.length < 3) {
+            mostrarErro("erroContactName", "Informe seu nome.");
+            contatoValido = false;
+        }
+
+        if (!email.includes("@") || !email.includes(".")) {
+            mostrarErro("erroContactEmail", "Informe um e-mail valido.");
+            contatoValido = false;
+        }
+
+        if (assunto === "") {
+            mostrarErro("erroContactSubject", "Selecione um assunto.");
+            contatoValido = false;
+        }
+
+        if (texto.length < 10) {
+            mostrarErro("erroContactMessage", "Escreva uma mensagem com pelo menos 10 caracteres.");
+            contatoValido = false;
+        }
+
+        if (contatoValido) {
+            document.getElementById("contactSuccess").textContent = "Mensagem registrada na simulacao. Obrigado pelo contato!";
+        }
+    });
+
+    formulario.addEventListener("reset", function () {
+        setTimeout(function () {
+            document.getElementById("contactCounter").textContent = "0";
+            document.getElementById("contactSuccess").textContent = "";
+            limparErro("erroContactName");
+            limparErro("erroContactEmail");
+            limparErro("erroContactSubject");
+            limparErro("erroContactMessage");
+        }, 0);
     });
 }

@@ -1589,3 +1589,9 @@ td:first-child {
 .contact-list span {
     color: var(--texto-secundario);
 }
+
+@media (max-width: 991px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
