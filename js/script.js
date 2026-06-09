@@ -60,7 +60,7 @@ function iniciarFormularioAlerta() {
         document.getElementById("alertSuccess").textContent = "";
 
         if (area === "") {
-            mostrarErro("erroAlertArea", "Selecione a area de risco.");
+            mostrarErro("erroAlertArea", "Selecione a área de risco.");
             alertaValido = false;
         }
 
@@ -80,7 +80,7 @@ function iniciarFormularioAlerta() {
         }
 
         if (alertaValido) {
-            document.getElementById("alertSuccess").textContent = "Alerta emitido na simulacao. Use os botoes ao lado para acompanhar.";
+            document.getElementById("alertSuccess").textContent = "Alerta emitido na simulação. Use os botões ao lado para acompanhar.";
         }
     });
 
@@ -111,11 +111,11 @@ function atualizarPreviaAlerta() {
         return;
     }
 
-    document.getElementById("previewArea").textContent = area.value || "Area ainda nao selecionada";
+    document.getElementById("previewArea").textContent = area.value || "Área ainda não selecionada";
     document.getElementById("previewType").textContent = tipo.value || "Risco elevado";
-    document.getElementById("previewMessage").textContent = mensagem.value || "A mensagem aparecera aqui.";
-    document.getElementById("previewPoint").textContent = ponto.value || "Ponto ainda nao informado";
-    document.getElementById("previewValidity").textContent = formatarData(data.value) + " as " + hora.value;
+    document.getElementById("previewMessage").textContent = mensagem.value || "A mensagem aparecerá aqui.";
+    document.getElementById("previewPoint").textContent = ponto.value || "Ponto ainda não informado";
+    document.getElementById("previewValidity").textContent = formatarData(data.value) + " às " + hora.value;
 }
 
 function mostrarErro(id, mensagem) {
@@ -128,7 +128,7 @@ function limparErro(id) {
 
 function formatarData(data) {
     if (!data) {
-        return "Data nao informada";
+        return "Data não informada";
     }
 
     const partes = data.split("-");
@@ -148,8 +148,8 @@ function iniciarSimulador() {
 
     const textos = [
         "Mensagem criada pela Defesa Civil.",
-        "Alerta armazenado no gateway comunitario.",
-        "Link principal indisponivel. Mensagem aguardando nova conexao.",
+        "Alerta armazenado no gateway comunitário.",
+        "Link principal indisponível. Mensagem aguardando nova conexão.",
         "Rota alternativa detectada para encaminhamento.",
         "Morador recebeu o alerta oficial.",
         "Morador enviou status ou pedido de socorro.",
@@ -230,7 +230,7 @@ function iniciarMorador() {
             return;
         }
 
-        let mensagem = "Status registrado na simulacao: " + statusSelecionado + ".";
+        let mensagem = "Status registrado na simulação: " + statusSelecionado + ".";
 
         if (statusSelecionado === "Preciso de resgate") {
             mensagem += " Coordenada DTN anexada ao pedido.";
@@ -310,7 +310,7 @@ function iniciarContato() {
         }
 
         if (!email.includes("@") || !email.includes(".")) {
-            mostrarErro("erroContactEmail", "Informe um e-mail valido.");
+            mostrarErro("erroContactEmail", "Informe um e-mail válido.");
             contatoValido = false;
         }
 
@@ -325,7 +325,7 @@ function iniciarContato() {
         }
 
         if (contatoValido) {
-            document.getElementById("contactSuccess").textContent = "Mensagem registrada na simulacao. Obrigado pelo contato!";
+            document.getElementById("contactSuccess").textContent = "Mensagem registrada na simulação. Obrigado pelo contato!";
         }
     });
 

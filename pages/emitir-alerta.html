@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulsar | Emissao de alerta oficial</title>
+    <title>Pulsar | Emissão de alerta oficial</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="nav-container">
             <a class="brand" href="../index.html">
-                <img src="../assets/pulsar_icone_transparente.png" alt="Icone Pulsar">
+                <img src="../assets/pulsar_icone_transparente.png" alt="Ícone Pulsar">
                 <span>Pulsar</span>
             </a>
 
@@ -20,9 +20,9 @@
 
             <nav class="site-nav" id="menu-principal">
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="sobre.html">Solucao</a></li>
-                    <li><a href="simulador.html">Simulacao</a></li>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="sobre.html">Solução</a></li>
+                    <li><a href="simulador.html">Simulação</a></li>
                     <li><a href="painel.html">Painel</a></li>
                     <li><a class="active" href="emitir-alerta.html">Emitir alerta</a></li>
                     <li><a href="retornos.html">Retornos</a></li>
@@ -39,8 +39,8 @@
         <section class="dashboard-title">
             <header>
                 <p class="tag">Defesa Civil</p>
-                <h1>Emissao de alerta oficial</h1>
-                <p>Preencha os dados principais e veja uma pre-visualizacao do alerta.</p>
+                <h1>Emissão de alerta oficial</h1>
+                <p>Preencha os dados principais e veja uma pré-visualização do alerta.</p>
             </header>
 
             <a class="btn secondary" href="painel.html">Voltar ao painel</a>
@@ -53,11 +53,11 @@
                 <form id="alertForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="alertArea">Area de risco</label>
+                            <label for="alertArea">Área de risco</label>
                             <select id="alertArea" name="alertArea">
-                                <option value="">Selecione a area</option>
-                                <option>Centro - Area Ribeirinha</option>
-                                <option>Sao Pedro - Encosta</option>
+                                <option value="">Selecione a área</option>
+                                <option>Centro - Área Ribeirinha</option>
+                                <option>São Pedro - Encosta</option>
                                 <option>Vila Norte - Baixada</option>
                             </select>
                             <small class="error-message" id="erroAlertArea"></small>
@@ -77,11 +77,11 @@
                     </div>
 
                     <fieldset class="choice-group">
-                        <legend>Nivel de risco</legend>
+                        <legend>Nível de risco</legend>
                         <label><input type="radio" name="risk" value="Baixo"> Baixo</label>
                         <label><input type="radio" name="risk" value="Moderado"> Moderado</label>
                         <label><input type="radio" name="risk" value="Alto" checked> Alto</label>
-                        <label><input type="radio" name="risk" value="Critico"> Critico</label>
+                        <label><input type="radio" name="risk" value="Crítico"> Crítico</label>
                     </fieldset>
 
                     <div class="form-row">
@@ -91,14 +91,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="validTime">Horario</label>
+                            <label for="validTime">Horário</label>
                             <input type="time" id="validTime" name="validTime" value="18:00">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="alertMessage">Mensagem curta do alerta</label>
-                        <textarea id="alertMessage" name="alertMessage" maxlength="160" placeholder="Ex.: Evite areas baixas e dirija-se ao ponto de encontro seguro."></textarea>
+                        <textarea id="alertMessage" name="alertMessage" maxlength="160" placeholder="Ex.: Evite áreas baixas e dirija-se ao ponto de encontro seguro."></textarea>
                         <small class="form-counter"><span id="alertCounter">0</span>/160</small>
                         <small class="error-message" id="erroAlertMessage"></small>
                     </div>
@@ -109,7 +109,7 @@
                         <small class="error-message" id="erroMeetingPoint"></small>
                     </div>
 
-                    <section class="form-actions" aria-label="Acoes do formulario">
+                    <section class="form-actions" aria-label="Ações do formulário">
                         <button class="btn secondary" type="reset">Salvar rascunho</button>
                         <button class="btn primary" type="submit">Emitir alerta</button>
                     </section>
@@ -119,21 +119,21 @@
             </article>
 
             <aside class="alert-preview">
-                <h2>Pre-visualizacao do alerta</h2>
+                <h2>Pré-visualização do alerta</h2>
 
                 <article class="phone-alert-card">
                     <p class="alert-label">Alerta oficial</p>
                     <h3 id="previewType">Risco elevado</h3>
-                    <p><strong>Area afetada:</strong> <span id="previewArea">Area ainda nao selecionada</span></p>
-                    <p><strong>Orientacao:</strong> <span id="previewMessage">A mensagem aparecera aqui.</span></p>
-                    <p><strong>Ponto de encontro:</strong> <span id="previewPoint">Ponto ainda nao informado</span></p>
-                    <p><strong>Validade:</strong> <span id="previewValidity">07/06/2026 as 18:00</span></p>
+                    <p><strong>Área afetada:</strong> <span id="previewArea">Área ainda não selecionada</span></p>
+                    <p><strong>Orientação:</strong> <span id="previewMessage">A mensagem aparecerá aqui.</span></p>
+                    <p><strong>Ponto de encontro:</strong> <span id="previewPoint">Ponto ainda não informado</span></p>
+                    <p><strong>Validade:</strong> <span id="previewValidity">07/06/2026 às 18:00</span></p>
                 </article>
 
                 <article class="validation-box">
-                    <h3>Validacoes obrigatorias</h3>
+                    <h3>Validações obrigatórias</h3>
                     <ul>
-                        <li>Area de risco</li>
+                        <li>Área de risco</li>
                         <li>Tipo de desastre</li>
                         <li>Mensagem do alerta</li>
                         <li>Ponto de encontro</li>
@@ -141,7 +141,7 @@
                 </article>
 
                 <nav class="next-actions vertical" aria-label="Acompanhar alerta">
-                    <a class="btn secondary full" href="simulador.html">Acompanhar na simulacao</a>
+                    <a class="btn secondary full" href="simulador.html">Acompanhar na simulação</a>
                     <a class="btn ghost full" href="painel.html">Ver no painel</a>
                 </nav>
             </aside>

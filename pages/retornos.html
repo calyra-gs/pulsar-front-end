@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulsar | Retornos da populacao</title>
+    <title>Pulsar | Retornos da população</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="nav-container">
             <a class="brand" href="../index.html">
-                <img src="../assets/pulsar_icone_transparente.png" alt="Icone Pulsar">
+                <img src="../assets/pulsar_icone_transparente.png" alt="Ícone Pulsar">
                 <span>Pulsar</span>
             </a>
 
@@ -20,9 +20,9 @@
 
             <nav class="site-nav" id="menu-principal">
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="sobre.html">Solucao</a></li>
-                    <li><a href="simulador.html">Simulacao</a></li>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="sobre.html">Solução</a></li>
+                    <li><a href="simulador.html">Simulação</a></li>
                     <li><a href="painel.html">Painel</a></li>
                     <li><a href="emitir-alerta.html">Emitir alerta</a></li>
                     <li><a class="active" href="retornos.html">Retornos</a></li>
@@ -38,9 +38,9 @@
     <main>
         <section class="dashboard-title">
             <header>
-                <p class="tag">Retornos e consciencia situacional</p>
-                <h1>Retornos da populacao</h1>
-                <p>Leitura consolidada para priorizacao de acoes e apoio a tomada de decisao.</p>
+                <p class="tag">Retornos e consciência situacional</p>
+                <h1>Retornos da população</h1>
+                <p>Leitura consolidada para priorização de ações e apoio à tomada de decisão.</p>
             </header>
 
             <a class="btn primary" href="morador.html">Registrar novo retorno</a>
@@ -50,36 +50,36 @@
             <article class="metric-card">
                 <span>Pessoas acolhidas</span>
                 <strong>1.248</strong>
-                <p>+122 nas ultimas 24h</p>
+                <p>+122 nas últimas 24h</p>
             </article>
 
             <article class="metric-card success">
                 <span>Evacuados</span>
                 <strong>342</strong>
-                <p>+28 nas ultimas 24h</p>
+                <p>+28 nas últimas 24h</p>
             </article>
 
             <article class="metric-card warning">
                 <span>Pedidos de apoio</span>
                 <strong>87</strong>
-                <p>+15 nas ultimas 24h</p>
+                <p>+15 nas últimas 24h</p>
             </article>
 
             <article class="metric-card danger">
-                <span>Ocorrencias criticas</span>
+                <span>Ocorrências críticas</span>
                 <strong>23</strong>
-                <p>+5 nas ultimas 24h</p>
+                <p>+5 nas últimas 24h</p>
             </article>
 
             <article class="metric-card">
-                <span>Areas sem resposta</span>
+                <span>Áreas sem resposta</span>
                 <strong>6</strong>
-                <p>-1 nas ultimas 24h</p>
+                <p>-1 nas últimas 24h</p>
             </article>
         </section>
 
         <aside class="notice">
-            <strong>Observacao:</strong> os dados abaixo sao simulados para demonstrar a tela de acompanhamento.
+            <strong>Observação:</strong> os dados abaixo são simulados para demonstrar a tela de acompanhamento.
         </aside>
 
         <section class="returns-layout">
@@ -88,9 +88,9 @@
                     <h2>Retornos recebidos</h2>
                     <select class="simple-select" id="returnFilter">
                         <option value="todos">Todos</option>
-                        <option value="critica">Critica</option>
+                        <option value="critica">Crítica</option>
                         <option value="baixa">Baixa</option>
-                        <option value="media">Media</option>
+                        <option value="media">Média</option>
                     </select>
                 </header>
 
@@ -98,12 +98,12 @@
                     <table id="returnsTable">
                         <thead>
                             <tr>
-                                <th>ID anonimo</th>
-                                <th>Area</th>
+                                <th>ID anônimo</th>
+                                <th>Área</th>
                                 <th>Tipo</th>
                                 <th>Pessoas</th>
                                 <th>Prioridade</th>
-                                <th>Situacao</th>
+                                <th>Situação</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,13 +112,13 @@
                                 <td>Morada do Vale</td>
                                 <td>Pedido de socorro</td>
                                 <td>3</td>
-                                <td><span class="pill danger">Critica</span></td>
+                                <td><span class="pill danger">Crítica</span></td>
                                 <td>Pendente</td>
                             </tr>
 
                             <tr data-priority="baixa">
                                 <td>MOR-3241</td>
-                                <td>Parque das Aguas</td>
+                                <td>Parque das Águas</td>
                                 <td>Estamos seguros</td>
                                 <td>4</td>
                                 <td><span class="pill info">Baixa</span></td>
@@ -130,22 +130,22 @@
                                 <td>Novo Horizonte</td>
                                 <td>Pedido de socorro</td>
                                 <td>2</td>
-                                <td><span class="pill danger">Critica</span></td>
+                                <td><span class="pill danger">Crítica</span></td>
                                 <td>Pendente</td>
                             </tr>
 
                             <tr data-priority="media">
                                 <td>MOR-1152</td>
-                                <td>Ribeirao das Pedras</td>
+                                <td>Ribeirão das Pedras</td>
                                 <td>Precisamos de abrigo</td>
                                 <td>5</td>
-                                <td><span class="pill warning">Media</span></td>
-                                <td>Em analise</td>
+                                <td><span class="pill warning">Média</span></td>
+                                <td>Em análise</td>
                             </tr>
 
                             <tr data-priority="baixa">
                                 <td>MOR-6621</td>
-                                <td>Jardim Esperanca</td>
+                                <td>Jardim Esperança</td>
                                 <td>Estamos seguros</td>
                                 <td>3</td>
                                 <td><span class="pill info">Baixa</span></td>
@@ -158,11 +158,11 @@
 
             <aside class="side-stack">
                 <article class="panel-card">
-                    <h2>Priorizacao operacional</h2>
+                    <h2>Priorização operacional</h2>
                     <ol class="priority-list">
-                        <li><strong>Setor 7</strong><span>Morada do Vale | Critico</span></li>
-                        <li><strong>Setor 4</strong><span>Ribeirao das Pedras | Alto</span></li>
-                        <li><strong>Setor 2</strong><span>Novo Horizonte | Medio</span></li>
+                        <li><strong>Setor 7</strong><span>Morada do Vale | Crítico</span></li>
+                        <li><strong>Setor 4</strong><span>Ribeirão das Pedras | Alto</span></li>
+                        <li><strong>Setor 2</strong><span>Novo Horizonte | Médio</span></li>
                     </ol>
                 </article>
 
@@ -170,7 +170,7 @@
                     <h2>Cobertura e resposta</h2>
                     <section class="coverage-box" aria-label="Cobertura de resposta">
                         <strong>72%</strong>
-                        <span>area com resposta</span>
+                        <span>área com resposta</span>
                     </section>
                     <a class="btn secondary full" href="painel.html">Voltar ao painel</a>
                 </article>
