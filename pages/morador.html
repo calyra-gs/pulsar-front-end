@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulsar | Visao do morador</title>
+    <title>Pulsar | Visão do morador</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="nav-container">
             <a class="brand" href="../index.html">
-                <img src="../assets/pulsar_icone_transparente.png" alt="Icone Pulsar">
+                <img src="../assets/pulsar_icone_transparente.png" alt="Ícone Pulsar">
                 <span>Pulsar</span>
             </a>
 
@@ -20,9 +20,9 @@
 
             <nav class="site-nav" id="menu-principal">
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="sobre.html">Solucao</a></li>
-                    <li><a href="simulador.html">Simulacao</a></li>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="sobre.html">Solução</a></li>
+                    <li><a href="simulador.html">Simulação</a></li>
                     <li><a href="painel.html">Painel</a></li>
                     <li><a href="emitir-alerta.html">Emitir alerta</a></li>
                     <li><a href="retornos.html">Retornos</a></li>
@@ -44,20 +44,20 @@
                 <p class="subtitle">Mensagem da Defesa Civil</p>
 
                 <section class="alert-details" aria-label="Detalhes do alerta">
-                    <p><strong>Area afetada:</strong> Bairro Centro e adjacencias</p>
+                    <p><strong>Área afetada:</strong> Bairro Centro e adjacências</p>
                     <p><strong>Tipo de risco:</strong> Alto risco de enchente</p>
-                    <p><strong>Orientacao:</strong> Evacue areas baixas e dirija-se a um ponto seguro.</p>
+                    <p><strong>Orientação:</strong> Evacue áreas baixas e dirija-se a um ponto seguro.</p>
                     <p><strong>Ponto de encontro:</strong> Escola Municipal Rui Barbosa</p>
                 </section>
             </article>
 
             <article class="resident-response">
                 <h2>Responder a Defesa Civil</h2>
-                <p>Informe sua situacao para apoiar a resposta da equipe.</p>
+                <p>Informe sua situação para apoiar a resposta da equipe.</p>
 
                 <form id="residentForm" novalidate>
                     <fieldset class="response-options">
-                        <legend>Sua situacao atual</legend>
+                        <legend>Sua situação atual</legend>
 
                         <label class="response-card">
                             <input type="radio" name="residentStatus" value="Estou seguro" checked>
@@ -68,9 +68,9 @@
                         </label>
 
                         <label class="response-card">
-                            <input type="radio" name="residentStatus" value="Ja evacuei">
+                            <input type="radio" name="residentStatus" value="Já evacuei">
                             <span>
-                                <strong>Ja evacuei</strong>
+                                <strong>Já evacuei</strong>
                                 <small>Estou em local seguro.</small>
                             </span>
                         </label>
@@ -94,19 +94,19 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="vulnerablePeople">Pessoas vulneraveis (opcional)</label>
+                                <label for="vulnerablePeople">Pessoas vulneráveis (opcional)</label>
                                 <select id="vulnerablePeople">
                                     <option value="">Selecione</option>
                                     <option>Idoso</option>
-                                    <option>Crianca</option>
+                                    <option>Criança</option>
                                     <option>Gestante</option>
-                                    <option>Nao ha</option>
+                                    <option>Não há</option>
                                 </select>
                             </div>
                         </div>
 
                         <section class="gps-status-box" aria-label="Status GPS DTN">
-                            <p><strong>Status GPS/DTN obrigatorio:</strong> ativo no modo resgate</p>
+                            <p><strong>Status GPS/DTN obrigatório:</strong> ativo no modo resgate</p>
                             <label for="gpsDtn">Coordenada pelo DTN</label>
                             <input type="text" id="gpsDtn" value="-23.550520, -46.633308" readonly>
                             <small>Coordenada simulada anexada automaticamente ao pedido.</small>
@@ -114,7 +114,7 @@
                     </section>
 
                     <div class="form-group">
-                        <label for="residentNote">Observacao opcional</label>
+                        <label for="residentNote">Observação opcional</label>
                         <textarea id="residentNote" maxlength="80" placeholder="Informe algo importante"></textarea>
                         <small class="form-counter"><span id="residentCounter">0</span>/80</small>
                     </div>
@@ -123,7 +123,7 @@
                     <p class="success-message" id="residentSuccess"></p>
                 </form>
 
-                <nav class="next-actions" aria-label="Proximas telas">
+                <nav class="next-actions" aria-label="Próximas telas">
                     <a class="btn secondary" href="retornos.html">Ver retorno no painel</a>
                     <a class="btn ghost" href="simulador.html">Ver caminho da mensagem</a>
                 </nav>
@@ -133,9 +133,9 @@
 
     <footer class="site-footer">
         <p>Pulsar | Global Solution FIAP 2026/1 | ADS 1 semestre</p>
-        <p>Resposta simulada | Sem envio real</p>
     </footer>
 
     <script src="../js/script.js"></script>
+    <script src="../js/chatbot.js"></script>
 </body>
 </html>
