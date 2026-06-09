@@ -106,3 +106,5 @@ O contato pode ser feito pela página `contato.html` do próprio site ou pelos p
 
 - GitHub Carlos Eduardo: https://github.com/ceduardoos
 - GitHub Allyson Victor: https://github.com/Ally7574
+- E-mail: calyra.fiap@gmail.com
+- Teams: rm569103@fiap.com.br
